@@ -1,0 +1,131 @@
+.movie-card {
+  background: rgba(28, 31, 38, 0.6);
+  border-radius: 18px;
+  width: 100%;
+  max-width: 320px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  height: auto;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(0, 255, 255, 0.25);
+}
+
+/* Image section */
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  object-position: top;
+  aspect-ratio: 16/ 9;
+}
+
+/* Text content */
+.card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.card-content h3 {
+  color: #00f0ff;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cfd8dc;
+  line-height: 1.4;
+}
+
+/* Buttons */
+.tag-button,
+.watch-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  width: 48%;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+/* Tag Button */
+.tag-button {
+  background: #7c4dff;
+  color: white;
+  box-shadow: 0 0 12px rgba(124, 77, 255, 0.4);
+}
+
+.tag-button:hover {
+  background: #651fff;
+}
+
+/* Watch Button */
+.watch-button {
+  background: #00c853;
+  color: white;
+  box-shadow: 0 0 12px rgba(0, 200, 83, 0.4);
+}
+
+.watch-button:hover {
+  background: #00b248;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .movie-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+
+  .tag-button,
+  .watch-button {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tag-button,
+  .watch-button {
+    width: 100%;
+  }
+}
