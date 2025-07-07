@@ -1,6 +1,7 @@
 import "./Filmy-card.css";
 
-const MovieCard = ({ title, ageRating, summary, image, tag, onWatch }) => {
+const MovieCard = (props) => {
+  const { title, ageRating, summary, image, tag, onWatch } = props;
   return (
     <div className="movie-card">
       <img src={image} alt={title} />

@@ -8,7 +8,6 @@
 body {
   font-family: "Segoe UI", sans-serif;
   scroll-behavior: smooth;
-  background: url("/graffiti-splatter-bg.png") center/cover no-repeat;
 }
 
 /* Header Info */
