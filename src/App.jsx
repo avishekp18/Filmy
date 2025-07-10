@@ -1,37 +1,49 @@
+import { useState, useEffect } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar, { Footer } from "./Components/Nav.jsx";
-import { Routes, Route } from "react-router-dom";
-import Home from "./Home.jsx";
-import Movie from "./Components/Movies.jsx"; // ✅ Capitalize import
+import MovieBrowser from "./Home.jsx";
+import SerisesPage from "./Serises.jsx";
+import "font-awesome/css/font-awesome.min.css";
 
-import "./App.css";
-import MovieC from "./Components/Moviecard.jsx";
+export default function App() {
+  const [darkMode, setDarkMode] = useState(true);
 
-function App() {
+  // Apply theme class
+  useEffect(() => {
+    document.body.className = darkMode ? "dark-mode" : "light-mode";
+  }, [darkMode]);
+
   return (
     <>
-      <Navbar />
-      <Home /> {/* Or MovieBrowser if that's separate */}
-      <MovieC /> {/* ✅ Capitalized component usage */}
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+
+      <Routes>
+        <Route path="/" element={<MovieBrowser />} />
+        <Route path="/Filmy" element={<SerisesPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+
       <Footer />
+
       <div className="floating-social">
         <a
-          href="https://wa.me/917735339717"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          📞
-        </a>
-        <a href="mailto:avishekpradhan24@gmail.com">✉️</a>
-        <a
-          href="www.linkedin.com/in/avishek-pradhan-83073a313"
+          href="https://linkedin.com/in/avishek-pradhan-83073a313"
+          aria-label="LinkedIn"
           target="_blank"
           rel="noopener noreferrer"
         >
           💼
         </a>
+        <a href="#" aria-label="Facebook">
+          <i className="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <i className="fab fa-twitter"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <i className="fab fa-instagram"></i>
+        </a>
       </div>
     </>
   );
 }
-
-export default App;

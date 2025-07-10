@@ -1,28 +1,135 @@
-/* App.css or SeriesList.css .series-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
+/* Container for all series/movie cards */
+.series-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
   padding: 2rem;
+  justify-items: center;
+  background-color: #0f0f0f;
 }
 
+/* Individual movie/series card */
 .series-card {
-  width: 300px;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  background: #fff;
-  text-align: center;
-  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 450px;
+  background: #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .series-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
+/* Movie/series image */
 .series-image {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10px;
-} */
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.series-card:hover .series-image {
+  transform: scale(1.02);
+}
+
+/* Content inside each card */
+.card-content1 {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Title */
+.movie-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Rating */
+.rating {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #81d4fa;
+}
+
+/* Summary text */
+.summary {
+  font-size: 0.95rem;
+  color: #b0bec5;
+  line-height: 1.5;
+}
+
+/* Genre and Cast sections */
+.genre,
+.cast {
+  font-size: 0.95rem;
+  color: #cfd8dc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.genre span,
+.cast span {
+  background-color: #263238;
+  color: #ffffff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Watch Now button */
+.btn-wtch {
+  align-self: flex-start;
+  background-color: #00bcd4;
+  color: #ffffff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-wtch:hover {
+  background-color: #0097a7;
+  transform: translateY(-2px);
+}
+
+/* Optional: link styling */
+.btn-link {
+  text-decoration: none;
+}
+
+/* Responsive fallback */
+@media (max-width: 950px) {
+  .series-container {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .card-content1 {
+    gap: 0.8rem;
+  }
+
+  .movie-title {
+    font-size: 1.2rem;
+  }
+
+  .series-image {
+    height: 200px;
+  }
+}

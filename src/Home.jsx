@@ -1,15 +1,14 @@
-// File: src/Pages/MovieBrowser.jsx (or any folder you prefer)
-
+// Home.jsx
 import React, { useState } from "react";
 import MovieCard from "./Components/Filmy-Card";
-import "./App.css"; // Or reuse App.css if styles are shared
-import movies from "./data/movies"; // Import movie data from a separate file
+import "./App.css";
+import movies from "./data/movies";
 
 const MovieBrowser = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   return (
-    <div className="movie-container">
+    <div className="movie-container" id="home">
       <h1>🎬 MyFilmy Browser</h1>
 
       <div className="card-grid">
@@ -43,6 +42,22 @@ const MovieBrowser = () => {
           </div>
         </div>
       )}
+
+      {/* Scroll sections */}
+      <div id="about" style={{ padding: "60px 0", textAlign: "center" }}>
+        <h2>About</h2>
+        <p>This is a React Movie Browser built by Avishek.</p>
+      </div>
+
+      <div id="contact" style={{ padding: "60px 0", textAlign: "center" }}>
+        <h2>Contact</h2>
+        <p>Email: avishekpradhan24@gmail.com | Phone: 7735339717</p>
+      </div>
+
+      <div id="login" style={{ padding: "60px 0", textAlign: "center" }}>
+        <h2>Login</h2>
+        <p>Login section coming soon...</p>
+      </div>
     </div>
   );
 };

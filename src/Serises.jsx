@@ -1,7 +1,7 @@
-import Movie from "./Movies";
-import serisesData from "../api/serisesData.json";
+import Movie from "./Components/Movies";
+import serisesData from "./api/serisesData.json";
 
-const MovieC = () => {
+const SerisesPage = () => {
   return (
     <ul className="series-container">
       {serisesData.map((mov, i) => (
@@ -11,4 +11,4 @@ const MovieC = () => {
   );
 };
 
-export default MovieC;
+export default SerisesPage;
