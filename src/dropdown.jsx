@@ -1,6 +1,6 @@
 // CountryCityDropdown.jsx
 import { useState } from "react";
-import { countryCityData } from "./data";
+
 const countryCityData = [
   {
     country: "India",
