@@ -4,6 +4,9 @@ import Navbar, { Footer } from "./Components/Nav.jsx";
 import MovieBrowser from "./Home.jsx";
 import SerisesPage from "./Serises.jsx";
 import "font-awesome/css/font-awesome.min.css";
+// import CountryStateCity from "./dropdown.jsx";
+import { EventProps } from "./EventProps.jsx";
+import { StateUser } from "./Components/hooks/State.jsx";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -22,8 +25,10 @@ export default function App() {
         <Route path="/Filmy" element={<SerisesPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-
+      {/* <CountryStateCity /> */}
       <Footer />
+      <EventProps />
+      <StateUser />
 
       <div className="floating-social">
         <a
